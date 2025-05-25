@@ -8,7 +8,7 @@ DOMAIN_NAME="adhikya.site"
 
 for instance in ${INSTANCES[@]}
 do 
-    INSTANCE_ID=$(aws ec2 run-instances --image-id ami-9c813fb71547fc4f --instance-type t2.micro --security-group-ids sg-069a28d699aae9b90 --tag-specifications "ResourceType=instance, 
+    INSTANCE_ID=$(aws ec2 run-instances --image-id ami-09c813fb71547fc4f --instance-type t2.micro --security-group-ids sg-069a28d699aae9b90 --tag-specifications "ResourceType=instance, 
     Tags=[{Key=Name, Value=$instance}]" --query "Instances[0].InstanceId" --output text)
     if [$instance != "frontend"]
     then 
