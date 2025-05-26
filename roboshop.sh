@@ -22,16 +22,16 @@ do
     aws route53 change-resource-record-sets --hosted-zone-id $ZONE_ID --change-batch     
 
     {
-    "Comment": "Creating or Updating Route 53 DNS records",
-    "Changes": [{
+        "Comment": "Creating or Updating Route 53 DNS records",
+        "Changes": [{
         "Action": "UPSERT",
         "ResourceRecordSet": {
             "Name": "'$instance'.'$DOMAIN_NAME'",
             "Type": "A",
-            "TTL": 1
+            "TTL": 1,
             "ResourceRecords": [{ "Value": "$IP" }]
         }
     }]
-}                                 
+                               
 
 done  
